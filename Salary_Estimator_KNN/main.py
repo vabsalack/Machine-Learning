@@ -59,6 +59,7 @@ def model_train(data):
     # plt.show()
 
     i = sorted(error, key=lambda z: z[1])[0][0]
+    print(i)
     model = KNeighborsClassifier(n_neighbors=i,
                                  metric="minkowski",
                                  p=2,
@@ -81,11 +82,11 @@ def predict_data(model, sc):
 
 def main():
     data = load_dataset("salary.csv")
-    print(data.shape)
+    # print(data.shape)
     print(data.head(5))
 
     data["income"] = data["income"].map({"<=50K": 1, ">50K": 0}).astype(int)
-    print(data.head)
+    # print(data.head)
 
     model, sc, xte, yte = model_train(data)
 
