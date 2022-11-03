@@ -43,6 +43,7 @@ def model_train(data):
         model.fit(xtr, ytr)
         prediction_i = model.predict(xte)
         error.append((i, np.mean(prediction_i != yte)))
+
     # error1 = [i[1] for i in error]
     #
     # plt.plot(range(1, 41),
